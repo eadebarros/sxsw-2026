@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SXSW 2026 - Segunda-feira 16 de Março | Guia de Eventos em Austin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .header-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .meta-item {
+            font-size: 0.95em;
+        }
+
+        .meta-item strong {
+            color: #e8e8e8;
+        }
+
+        .current-time {
+            background: rgba(196, 30, 58, 0.1);
+            border: 2px solid #c41e3a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+            color: #c41e3a;
+        }
+
+        .tips-section {
+            background: white;
+            border-left: 4px solid #c41e3a;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .tips-section h2 {
+            color: #000;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .tip-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid #c41e3a;
+        }
+
+        .tip-item strong {
+            color: #c41e3a;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .featured-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid #000;
+        }
+
+        .featured-section h2 {
+            color: #000;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .featured-badge {
+            background: #c41e3a;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .event-card {
+            background: #f9f9f9;
+            border-left: 4px solid #c41e3a;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+        }
+
+        .event-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.15);
+        }
+
+        .event-card.passed {
+            background: #e8e8e8;
+            border-left-color: #999;
+            opacity: 0.6;
+        }
+
+        .event-card.passed:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .event-time {
+            font-weight: 700;
+            color: #c41e3a;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .event-card.passed .event-time {
+            color: #999;
+        }
+
+        .event-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .event-card.passed .event-title {
+            color: #666;
+        }
+
+        .event-location {
+            color: #666;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .event-card.passed .event-location {
+            color: #999;
+        }
+
+        .category-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8e8e8;
+        }
+
+        .category-icon {
+            font-size: 2em;
+        }
+
+        .category-title {
+            flex: 1;
+        }
+
+        .category-title h3 {
+            font-size: 1.6em;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .category-count {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .events-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .summary-table th,
+        .summary-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .summary-table th {
+            background: #f0f0f0;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .summary-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .summary-table .count {
+            font-weight: 700;
+            color: #c41e3a;
+        }
+
+        .footer {
+            background: #f0f0f0;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .footer a {
+            color: #c41e3a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .credit {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        .share-info {
+            background: #fff;
+            border: 2px solid #c41e3a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .share-info strong {
+            color: #c41e3a;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .header-meta {
+                gap: 15px;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .search-box {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e8e8e8;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #c41e3a;
+        }
+
+        .search-box button {
+            padding: 12px 24px;
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover {
+            background: #c41e3a;
+        }
+
+        .toc {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #000;
+        }
+
+        .toc h3 {
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .toc ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .toc a {
+            color: #c41e3a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .passed-badge {
+            display: inline-block;
+            background: #999;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 700;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+
+        .day-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .day-nav a {
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #c41e3a;
+            color: #c41e3a;
+            transition: all 0.2s;
+        }
+
+        .day-nav a:hover {
+            background: #c41e3a;
+            color: white;
+        }
+
+        .day-nav a.active {
+            background: #c41e3a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎉 SXSW 2026</h1>
+            <p>Guia Completo de Eventos - Segunda-feira, 16 de Março</p>
+            <div class="header-meta">
+                <div class="meta-item"><strong>📍 Local:</strong> Austin, Texas</div>
+                <div class="meta-item"><strong>📅 Data:</strong> Segunda-feira, 16 de Março</div>
+                <div class="meta-item"><strong>🎪 Total:</strong> 110+ Eventos</div>
+            </div>
+        </header>
+
+        <div class="day-nav">
+            <a href="/">☀️ Domingo 15</a>
+            <a href="/16-marco" class="active">🗓️ Segunda 16</a>
+        </div>
+
+        <div class="current-time">
+            ⏰ Horário atual em Austin: <span id="current-time">--:--</span>
+        </div>
+
+        <div class="share-info">
+            <p>Compartilhado por <strong>@edu.debarros</strong> 🚀</p>
+            <p style="font-size: 0.9em; margin-top: 8px;">Ajudando você a aproveitar o melhor de Austin sem perder tempo</p>
+        </div>
+
+        <div class="tips-section">
+            <h2>💡 Dicas de Ouro para Segunda-feira</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <strong>🏘️ Escolha um bairro</strong>
+                    East 6th, Rainey, Red River ou South Congress — fique por lá!
+                </div>
+                <div class="tip-item">
+                    <strong>⏰ Manhã</strong>
+                    Painéis de tech e inovação. Fácil entrar em qualquer lugar.
+                </div>
+                <div class="tip-item">
+                    <strong>🎶 Tarde</strong>
+                    Festas começam. Austin fica barulhenta e animada.
+                </div>
+                <div class="tip-item">
+                    <strong>🌙 Noite</strong>
+                    Shows começam às 19h-20h. Happy hour e refeição de verdade.
+                </div>
+                <div class="tip-item">
+                    <strong>🌃 Madrugada</strong>
+                    100+ eventos depois das 21h. Chegue cedo — filas são enormes!
+                </div>
+                <div class="tip-item">
+                    <strong>✅ RSVP Cedo</strong>
+                    Os bons eventos preenchem rápido. Não deixe para última hora.
+                </div>
+            </div>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Navegação Rápida</h3>
+            <ul>
+                <li><a href="#highlights">⭐ Eventos Mais Cobiçados</a></li>
+                <li><a href="#tech">💻 Tecnologia & IA</a></li>
+                <li><a href="#networking">🤝 Networking & Negócios</a></li>
+                <li><a href="#parties">🍾 Festas & Vida Noturna</a></li>
+                <li><a href="#music">🎵 Música & Showcases</a></li>
+                <li><a href="#summary">📊 Resumo por Tipo</a></li>
+            </ul>
+        </div>
+
+        <!-- EVENTOS MAIS COBIÇADOS -->
+        <div class="featured-section" id="highlights">
+            <h2>
+                <span class="featured-badge">⭐ Destaque</span>
+                Eventos Mais Cobiçados
+            </h2>
+            <p style="color: #666; margin-bottom: 20px;">Esses são os eventos que a galera mais quer pegar segunda-feira. RSVP agora se quiser garantir!</p>
+
+            <div class="events-list">
+                <div class="event-card" data-time="10:00">
+                    <div class="event-time">10:00 AM</div>
+                    <div class="event-title">💼 Beyond Branding: Advertising as Infrastructure for Change</div>
+                    <div class="event-location">📍 Austin Marriott Downtown - Waterloo Ballroom 3</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Para quem quer entender como publicidade e marketing podem ser ferramentas de transformação social. Essencial para empreendedores que pensam além do lucro.</p>
+                </div>
+
+                <div class="event-card" data-time="10:00">
+                    <div class="event-time">10:00 AM</div>
+                    <div class="event-title">💼 Corporate Dark Arts: The Real Rules of Marketing Power</div>
+                    <div class="event-location">📍 Austin Marriott Downtown - Waterloo Ballroom 4-6</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Conversa franca sobre como funciona o poder real no marketing corporativo. Insights valiosos para quem quer escalar negócios.</p>
+                </div>
+
+                <div class="event-card" data-time="10:00">
+                    <div class="event-time">10:00 AM</div>
+                    <div class="event-title">🎨 ENCORE: The Story of Stories — The Million Year History of Storytelling</div>
+                    <div class="event-location">📍 Hilton Austin Downtown - Salon A</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Para criadores, empreendedores e marketers que querem dominar a arte de contar histórias que vendem.</p>
+                </div>
+
+                <div class="event-card" data-time="14:30">
+                    <div class="event-time">2:30 PM - 4:30 PM</div>
+                    <div class="event-title">🤖 In Good Company - Texas A&M x Fast Company</div>
+                    <div class="event-location">📍 Courtyard Marriott – Brazos I-III – 300 E 4th St.</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Speakers: David Pallash e mais. Programação especial focada em inovação e negócios. Oportunidade de networking com líderes de tech e inovação.</p>
+                </div>
+
+                <div class="event-card" data-time="19:30">
+                    <div class="event-time">7:30 PM</div>
+                    <div class="event-title">🎵 The Lumineers - Moody Amphitheater</div>
+                    <div class="event-location">📍 Waterloo Park, 1401 Trinity St.</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Show gratuito apresentado por Rivian. Melhor opção de entretenimento noturno de qualidade sem gastar.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TECNOLOGIA & IA -->
+        <div class="category-section" id="tech">
+            <div class="category-header">
+                <div class="category-icon">💻</div>
+                <div class="category-title">
+                    <h3>Tecnologia & IA</h3>
+                    <p class="category-count">50+ eventos — IA, marketing, transformação digital, startups</p>
+                </div>
+            </div>
+
+            <div class="events-list">
+                <div class="event-card" data-time="10:00">
+                    <div class="event-time">10:00 AM - 12:00 PM</div>
+                    <div class="event-title">🤖 AI-Driven Marketing & Business Transformation</div>
+                    <div class="event-location">📍 Austin Convention Center</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Painéis sobre como IA está mudando marketing, vendas e operações. Essencial para empreendedores que querem ficar à frente.</p>
+                </div>
+
+                <div class="event-card" data-time="10:00">
+                    <div class="event-time">10:00 AM - 12:00 PM</div>
+                    <div class="event-title">💡 Innovation & Startups Sessions</div>
+                    <div class="event-location">📍 Austin Convention Center</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Apresentações sobre as tendências mais quentes em tech: Web3, creator economy, physical AI e mais.</p>
+                </div>
+
+                <div class="event-card" data-time="13:00">
+                    <div class="event-time">1:00 PM - 5:00 PM</div>
+                    <div class="event-title">🚀 Tech Innovation Showcases</div>
+                    <div class="event-location">📍 Austin Convention Center</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Demos de startups e tecnologias emergentes. Ótimo para descobrir ferramentas que podem ajudar seu negócio.</p>
+                </div>
+
+                <div class="event-card" data-time="13:00">
+                    <div class="event-time">1:00 PM - 5:00 PM</div>
+                    <div class="event-title">📊 Data, Analytics & Growth</div>
+                    <div class="event-location">📍 Austin Convention Center</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Sessões sobre como usar dados para tomar decisões melhores e escalar negócios.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NETWORKING & NEGÓCIOS -->
+        <div class="category-section" id="networking">
+            <div class="category-header">
+                <div class="category-icon">🤝</div>
+                <div class="category-title">
+                    <h3>Networking & Negócios</h3>
+                    <p class="category-count">20+ eventos — founders, investidores e líderes de mercado</p>
+                </div>
+            </div>
+
+            <div class="events-list">
+                <div class="event-card" data-time="09:00">
+                    <div class="event-time">9:00 AM</div>
+                    <div class="event-title">💰 AI for SaaS - Authentic Sauna SXSW Founder Event</div>
+                    <div class="event-location">📍 Austin, Texas</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Networking com founders de SaaS focados em IA. Oportunidade de encontrar co-founders, investidores ou parceiros.</p>
+                </div>
+
+                <div class="event-card" data-time="09:00">
+                    <div class="event-time">9:00 AM</div>
+                    <div class="event-title">🏢 New Mexico House during SXSW 2026</div>
+                    <div class="event-location">📍 Austin, Texas</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Casa oficial de networking. Drinks, comida e conexões com empreendedores de todo o mundo.</p>
+                </div>
+
+                <div class="event-card" data-time="13:00">
+                    <div class="event-time">1:00 PM - 5:00 PM</div>
+                    <div class="event-title">👩‍💼 She Speaks CEO Powerhouse Women Unite</div>
+                    <div class="event-location">📍 Austin, Texas</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Networking exclusivo para mulheres CEOs e líderes. Oportunidade de conectar com outras mulheres empreendedoras.</p>
+                </div>
+
+                <div class="event-card" data-time="13:00">
+                    <div class="event-time">1:00 PM - 5:00 PM</div>
+                    <div class="event-title">🎯 Culture Connection and Growth SXSW</div>
+                    <div class="event-location">📍 Austin, Texas</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Evento focado em conexões autênticas entre empreendedores e inovadores. Vibe mais relaxada, conversas reais.</p>
+                </div>
+
+                <div class="event-card" data-time="17:00">
+                    <div class="event-time">5:00 PM - 8:00 PM</div>
+                    <div class="event-title">📸 Precision Camera & Fujifilm Free Headshots</div>
+                    <div class="event-location">📍 Austin, Texas</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Aproveita para tirar foto profissional de graça. Ótimo para LinkedIn e redes sociais.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FESTAS & VIDA NOTURNA -->
+        <div class="category-section" id="parties">
+            <div class="category-header">
+                <div class="category-icon">🍾</div>
+                <div class="category-title">
+                    <h3>Festas & Vida Noturna</h3>
+                    <p class="category-count">15+ eventos — day parties ao meio-dia até 3 AM</p>
+                </div>
+            </div>
+
+            <div class="events-list">
+                <div class="event-card" data-time="12:00">
+                    <div class="event-time">12:00 PM - 6:00 PM</div>
+                    <div class="event-title">🎶 Northern Sound x DBT Wales Day Party</div>
+                    <div class="event-location">📍 British Music Embassy</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Day party com música ao vivo. Drinks, comida e networking descontraído.</p>
+                </div>
+
+                <div class="event-card" data-time="12:00">
+                    <div class="event-time">12:00 PM - 6:00 PM</div>
+                    <div class="event-title">🎸 Marshall: Live From Mohawk</div>
+                    <div class="event-location">📍 Mohawk</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Show ao vivo em um dos bares mais icônicos de Austin. Ambiente descontraído, ótimo para conhecer gente.</p>
+                </div>
+
+                <div class="event-card" data-time="18:00">
+                    <div class="event-time">6:00 PM - 11:00 PM</div>
+                    <div class="event-title">🍹 Waterloo Records Day Parties</div>
+                    <div class="event-location">📍 Waterloo Records (Múltiplas locações)</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Evento gratuito, sem RSVP ou badge necessário. Música ao vivo, drinks e comida. Ambiente super descontraído.</p>
+                </div>
+
+                <div class="event-card" data-time="18:00">
+                    <div class="event-time">6:00 PM - 11:00 PM</div>
+                    <div class="event-title">🎤 Jocelyn Simone presents No Sleep No Hunger</div>
+                    <div class="event-location">📍 The Hole in the Wall</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Show de música ao vivo em um bar lendário de Austin. Vibe autêntica, muito bom.</p>
+                </div>
+
+                <div class="event-card" data-time="23:00">
+                    <div class="event-time">11:00 PM - 3:00 AM</div>
+                    <div class="event-title">🎵 TX Queer Country Club Showcase</div>
+                    <div class="event-location">📍 Sage Brush Texas</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Showcase de country queer. Ambiente inclusivo, música ao vivo, muita energia.</p>
+                </div>
+
+                <div class="event-card" data-time="23:00">
+                    <div class="event-time">11:00 PM - 3:00 AM</div>
+                    <div class="event-title">🎭 Take Action x SXSW 2026 Event Series - Day 1</div>
+                    <div class="event-location">📍 Austin, Texas</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Evento noturno com foco em ação social e inovação. Drinks, networking e discussões interessantes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MÚSICA & SHOWCASES -->
+        <div class="category-section" id="music">
+            <div class="category-header">
+                <div class="category-icon">🎵</div>
+                <div class="category-title">
+                    <h3>Música & Showcases</h3>
+                    <p class="category-count">25+ eventos — palcos espalhados por Austin</p>
+                </div>
+            </div>
+
+            <div class="events-list">
+                <div class="event-card" data-time="14:00">
+                    <div class="event-time">2:00 PM - 6:00 PM</div>
+                    <div class="event-title">🎸 Flak Records Showcase</div>
+                    <div class="event-location">📍 Zilker Brewing Co.</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Featuring: Larry Seaman, Eric Hisaw Band e mais. Música ao vivo, drinks, ambiente casual.</p>
+                </div>
+
+                <div class="event-card" data-time="19:00">
+                    <div class="event-time">7:00 PM - 11:00 PM</div>
+                    <div class="event-title">🎤 Launch Tennessee, imogene + willie, and Hattie B's Backyard Brunch</div>
+                    <div class="event-location">📍 Austin, Texas</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Showcase de artistas do Tennessee. Música ao vivo, comida e drinks.</p>
+                </div>
+
+                <div class="event-card" data-time="19:00">
+                    <div class="event-time">7:00 PM - 11:00 PM</div>
+                    <div class="event-title">🎵 Radio Day Stage at Downright</div>
+                    <div class="event-location">📍 Downright Austin</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Performances ao vivo transmitidas por rádio. Artistas variados, ambiente descontraído.</p>
+                </div>
+
+                <div class="event-card" data-time="19:30">
+                    <div class="event-time">7:30 PM</div>
+                    <div class="event-title">🎵 The Lumineers — Show Gratuito (Rivian)</div>
+                    <div class="event-location">📍 Waterloo Park, 1401 Trinity St.</div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 8px;">O show mais aguardado da segunda-feira. Gratuito, sem badge. Chegue cedo para garantir lugar.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESUMO POR TIPO -->
+        <div class="category-section" id="summary">
+            <div class="category-header">
+                <div class="category-icon">📊</div>
+                <div class="category-title">
+                    <h3>Resumo Rápido por Tipo</h3>
+                    <p class="category-count">110+ eventos em Austin — segunda-feira, 16 de março</p>
+                </div>
+            </div>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Tipo de Evento</th>
+                        <th>Quantidade</th>
+                        <th>Melhor Horário</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>💻 Tecnologia & IA</td>
+                        <td class="count">50+</td>
+                        <td>10 AM - 4 PM</td>
+                    </tr>
+                    <tr>
+                        <td>🤝 Networking & Negócios</td>
+                        <td class="count">20+</td>
+                        <td>9 AM - 6 PM</td>
+                    </tr>
+                    <tr>
+                        <td>🍾 Festas & Vida Noturna</td>
+                        <td class="count">15+</td>
+                        <td>12 PM - 3 AM</td>
+                    </tr>
+                    <tr>
+                        <td>🎵 Música & Showcases</td>
+                        <td class="count">25+</td>
+                        <td>2 PM - 11 PM</td>
+                    </tr>
+                    <tr>
+                        <td>🎨 Arte & Cultura</td>
+                        <td class="count">5+</td>
+                        <td>10 AM - 5 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <h3>🎯 Próximos Passos</h3>
+            <p><strong>1. Escolha seus eventos favoritos</strong> — Use a navegação acima para explorar por categoria</p>
+            <p><strong>2. RSVP cedo</strong> — Os melhores eventos preenchem rápido</p>
+            <p><strong>3. Escolha um bairro</strong> — East 6th, Rainey, Red River ou South Congress</p>
+            <p><strong>4. Chegue cedo</strong> — Especialmente para eventos depois das 21h</p>
+            <p><strong>5. Fique hidratado</strong> — Austin é quente, mesmo em março</p>
+
+            <div class="credit">
+                <p><strong>📚 Fontes:</strong>
+                    <a href="https://schedule.sxsw.com/" target="_blank">SXSW Official Schedule</a> •
+                    <a href="https://rsvpatx.com/rsvp-list" target="_blank">RSVPATX</a> •
+                    <a href="https://sxsw.com/" target="_blank">SXSW Official</a>
+                </p>
+                <p style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
+                    <strong>Compartilhado por:</strong> @edu.debarros 🚀<br>
+                    <em>Ajudando você a aproveitar o melhor de Austin sem perder tempo</em>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateEventStatus() {
+            const now = new Date();
+            const austinTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Chicago' }));
+
+            const hours = String(austinTime.getHours()).padStart(2, '0');
+            const minutes = String(austinTime.getMinutes()).padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}`;
+
+            const currentTotalMinutes = austinTime.getHours() * 60 + austinTime.getMinutes();
+
+            const eventCards = document.querySelectorAll('.event-card[data-time]');
+            eventCards.forEach(card => {
+                const timeStr = card.getAttribute('data-time');
+                const [h, m] = timeStr.split(':').map(Number);
+                const eventTotalMinutes = h * 60 + m;
+
+                if (eventTotalMinutes <= currentTotalMinutes) {
+                    card.classList.add('passed');
+                } else {
+                    card.classList.remove('passed');
+                }
+            });
+        }
+
+        updateEventStatus();
+        setInterval(updateEventStatus, 60000);
+    </script>
+</body>
+</html>
